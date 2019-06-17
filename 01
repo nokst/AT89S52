@@ -1,0 +1,32 @@
+ #include<AT89X52.h>
+ void delayms(unsigned int time);
+
+ int main (){
+	code char  table  []  =	 {		
+  0x7e,0x3c,0x18,0x00,
+  0x18,0x3c,0x7e,0xff,
+  0x7e,0x3c,0x18,0x00,
+  0x18,0x3c,0x7e,0xff,
+  0x00,0xff,0x00,0xff};
+
+ while (1)
+ {
+	 unsigned char k;
+	 for(k=0;k<20;k++)
+	 {
+	 P2=table[k];
+	 delayms(200);
+ }
+ }
+ }
+ void delayms(unsigned int time)
+ {
+ unsigned int n;
+ while(time>0)
+ {
+ n=120;
+ while(n>0)
+ n--;
+ time--;
+ }
+ }
